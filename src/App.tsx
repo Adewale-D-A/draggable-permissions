@@ -1,25 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import PageNotFound from "./404";
+import RolesAndPermissions from "./pages/roels-and-permissions";
+import AddRoles from "./pages/roels-and-permissions/add-roles";
+import EditRoles from "./pages/roels-and-permissions/edit-roles";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="*" element={<PageNotFound />} />
+          <Route path="/" element={<RolesAndPermissions />} />
+          <Route
+            path="/roles-and-permissions/add-roles"
+            element={<AddRoles />}
+          />
+          <Route
+            path="/roles-and-permissions/edit-roles/:id"
+            element={<EditRoles />}
+          />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 

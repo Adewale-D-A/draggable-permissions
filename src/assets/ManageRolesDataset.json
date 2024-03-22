@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "sn": 1,
+    "created_by": {
+      "name": "John Doe",
+      "email": "john@aol.com"
+    },
+    "role_name": "admin role",
+    "role_assigned": ["delete", "read"],
+    "resources": ["user", "games"],
+    "date_time": { "date": "3rd December, 2023", "time": "12:45" }
+  }
+]
